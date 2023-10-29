@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar Caracteres</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Ordenar Caracteres</h2>
+        <input type="text" id="inputString" placeholder="Digite sua sequência">
+        <button onclick="ordenarCaracteres()">Ordenar</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function ordenarCaracteres() {
+            const inputElement = document.getElementById('inputString');
+            const original = inputElement.value;
+            const ordenado = original.split('').sort().join('');
+
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = `<p>Original: ${original}</p><p>Ordenado: ${ordenado}</p>`;
+        }
+    </script>
+</body>
+</html>

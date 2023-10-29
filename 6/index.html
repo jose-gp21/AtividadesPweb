@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Pares</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+            width: 250px;
+        }
+
+        input, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            border: none;
+            background-color: #0b7008;
+            color: #FFF;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00b300;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Números Pares</h2>
+        <input type="number" id="numeroN" placeholder="Digite um número">
+        <button onclick="mostrarPares()">Mostrar Pares</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function primeirosPares(N) {
+            let numerosPares = [];
+
+            for (let i = 0; numerosPares.length < N; i++) {
+                if (i % 2 === 0) {
+                    numerosPares.push(i);
+                }
+            }
+
+            return numerosPares;
+        }
+
+        function mostrarPares() {
+            const N = document.getElementById('numeroN').value;
+            const pares = primeirosPares(Number(N));
+            document.getElementById('resultado').textContent = pares.join(', ');
+        }
+
+    </script>
+</body>
+</html>

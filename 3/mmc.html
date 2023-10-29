@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular MMC</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Calcular MMC</h2>
+        <input type="number" id="numero1" placeholder="Digite o primeiro número">
+        <input type="number" id="numero2" placeholder="Digite o segundo número">
+        <button onclick="calcularMMC()">Calcular</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function calcularMMC() {
+            const numero1 = parseInt(document.getElementById('numero1').value);
+            const numero2 = parseInt(document.getElementById('numero2').value);
+
+            const mmc = (numero1 * numero2) / mdc(numero1, numero2);
+
+            const resultadoDiv = document.getElementById('resultado');
+            resultadoDiv.innerHTML = `<p>MMC(${numero1}, ${numero2}) = ${mmc}</p>`;
+        }
+
+        function mdc(a, b) {
+            while (b !== 0) {
+                let temp = a % b;
+                a = b;
+                b = temp;
+            }
+            return a;
+        }
+    </script>
+</body>
+</html>

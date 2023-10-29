@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>Informar Notas</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Informar Notas</h2>
+        Nome do Aluno: <br><input type="text" id="nomeAluno"><br><br>
+        Nome da Disciplina: <br><input type="text" id="nomeDisciplina"><br><br>
+        Primeira Nota: <br><input type="number" id="nota1" step="0.01" min="0" max="10"><br><br>
+        Segunda Nota: <br><input type="number" id="nota2" step="0.01" min="0" max="10"><br><br>
+        Terceira Nota: <br><input type="number" id="nota3" step="0.01" min="0" max="10"><br><br>
+        <button onclick="calcularMedia()">CALCULAR MÉDIA</button>
+        <p id="resultado"></p>
+    </div>
+</body>
+</html>

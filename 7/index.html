@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Adivinhação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Jogo de Adivinhação</h1>
+        <div class="game">
+            <p>Olá, jogador! Qual é o seu nome?</p>
+            <input type="text" id="playerName" placeholder="Seu nome">
+            <button id="startButton">Iniciar Jogo</button>
+        </div>
+        <div class="game hidden" id="guessGame">
+            <p>Olá, <span id="playerNameDisplay"></span>! Tente adivinhar o número entre 0 e 100:</p>
+            <input type="number" id="userGuess" placeholder="Seu palpite">
+            <button id="guessButton">Enviar Palpite</button>
+            <p id="message"></p>
+            <p>Tentativas restantes: <span id="attempts">20</span></p>
+        </div>
+        <div class="game hidden" id="gameOver">
+            <p>Parabéns, <span id="playerNameResult"></span>! Você acertou em <span id="attemptsResult"></span> tentativas!</p>
+            <button id="playAgainButton">Jogar Novamente</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

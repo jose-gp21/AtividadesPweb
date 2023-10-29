@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inverter Nomes</title>
+    <style>
+         body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Espaço entre os elementos */
+            width: 200px;
+        }
+
+        input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #086600;
+            color: #FFF;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #00b300;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Inverter Nomes</h2>
+        <input type="text" id="nome1" placeholder="Nome 1">
+        <input type="text" id="nome2" placeholder="Nome 2">
+        <input type="text" id="nome3" placeholder="Nome 3">
+        <input type="text" id="nome4" placeholder="Nome 4">
+        <input type="text" id="nome5" placeholder="Nome 5">
+        <button onclick="inverterNomes()">Inverter</button>
+    </div>
+
+    <script>
+        function inverterNomes() {
+            let nomes = [
+                document.getElementById('nome1').value,
+                document.getElementById('nome2').value,
+                document.getElementById('nome3').value,
+                document.getElementById('nome4').value,
+                document.getElementById('nome5').value
+            ];
+
+            nomes.reverse();
+
+            document.getElementById('nome1').value = nomes[0];
+            document.getElementById('nome2').value = nomes[1];
+            document.getElementById('nome3').value = nomes[2];
+            document.getElementById('nome4').value = nomes[3];
+            document.getElementById('nome5').value = nomes[4];
+        }
+    </script>
+</body>
+</html>

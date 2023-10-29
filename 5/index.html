@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data por Extenso</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        div {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; 
+            width: 250px;
+        }
+
+        input, button {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            border: none;
+            background-color: #058d3e;
+            color: #FFF;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #00b300;
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Data por Extenso</h2>
+        <input type="text" id="dataInput" placeholder="dd/mm/aaaa">
+        <button onclick="converterData()">Converter</button>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function converterData() {
+            const meses = [
+                'janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho',
+                'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'
+            ];
+
+            let data = document.getElementById('dataInput').value;
+            let partes = data.split('/');
+
+            if (partes.length !== 3 || partes[0].length !== 2 || partes[1].length !== 2 || partes[2].length !== 4) {
+                document.getElementById('resultado').textContent = 'Formato de data inválido.';
+                return;
+            }
+
+            let dia = parseInt(partes[0], 10);
+            let mes = parseInt(partes[1], 10) - 1; // -1 pois arrays em JavaScript começam em 0
+            let ano = partes[2];
+
+            if (dia < 1 || dia > 31 || mes < 0 || mes > 11) {
+                document.getElementById('resultado').textContent = 'Data inválida.';
+                return;
+            }
+
+            let dataPorExtenso = `${dia} de ${meses[mes]} de ${ano}`;
+            document.getElementById('resultado').textContent = dataPorExtenso;
+        }
+    </script>
+</body>
+</html>
